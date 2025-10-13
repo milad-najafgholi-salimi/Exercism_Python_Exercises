@@ -1,0 +1,40 @@
+EXPECTED_BAKE_TIME = 40
+PREPARATION_TIME = 2
+
+
+def bake_time_remaining(elapsed_bake_time):
+    """Calculate the bake time remaining.
+
+    :param elapsed_bake_time: int - baking time already elapsed.
+    :return: int - remaining bake time (in minutes) derived from 'EXPECTED_BAKE_TIME'.
+
+    Function that takes the actual minutes the lasagna has been in the oven as
+    an argument and returns how many minutes the lasagna still needs to bake
+    based on the `EXPECTED_BAKE_TIME`.
+    """
+
+    return EXPECTED_BAKE_TIME - elapsed_bake_time
+
+
+def preparation_time_in_minutes(num_layers):
+    """Calculate the preparation time in minutes.
+
+    :param num_layers: int - number of lasagna layers.
+    :return: int - preparation time of lasagna (in minutes) derived from 'PREPARATION_TIME'.
+
+    Function that takes the actual numbers of lasagna layers during preparation as
+    an argument and returns how many minutes the lasagna need times to preparate
+    based on the `PREPARATION_TIME`.
+    """
+    return num_layers * PREPARATION_TIME
+
+
+
+def elapsed_time_in_minutes(num_layers, elapsed_bake_time):
+    """Calculate the total elapsed time in minutes.
+    :param num_layers: int - number of lasagna layers.
+    :param elapsed_bake_time: int - baking time already elapsed.
+    :return: int - total elapsed time during preparation and during the ovan time."""
+    total_elapsed_time = (num_layers * PREPARATION_TIME) + elapsed_bake_time
+    return total_elapsed_time
+
